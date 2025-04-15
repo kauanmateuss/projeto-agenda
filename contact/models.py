@@ -9,3 +9,7 @@ class Contact(models.Model):
     email = models.EmailField(max_length=100)
     created_date = models.DateTimeField(default=timezone.now)   # esse timezone.now vai colocar a data automaticamente
     description = models.TextField(blank=True)
+
+
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}'
